@@ -4,10 +4,50 @@
 		%title
 		%link{ :href => 'css/reset.css', :rel => 'stylesheet' }
 		%link{ :href => 'css/design.css', :rel => 'stylesheet' }
+		%link{ :href => 'css/bootstrap/bootstrap.min.css', :rel => 'stylesheet'}
+		%link{ :href => 'css/bootstrap/bootstrap-responsive.min.css', :rel => 'stylesheet'}
+
 		%script{ :'data-main' => 'js/main', :src => 'js/libs/require/require.js' }
 
 	%body
-		
+		.navbar
+			.navbar-inner
+				.container
+					%a.brand{ :href => '#'}
+						dom tree
+					%ul.nav
+						%li.active
+							%a{ :href => '#'}
+								Home
+						%li
+							%a{ :href => '#'}
+								JavaScript
+						%li
+							%a{ :href => '#'}
+								Customize
+
+						%li.dropdown
+							%a.dropdown-toggle{ :'data-toggle' => 'dropdown', :href => '#'}
+								Account
+								%b.caret
+							%ul.dropdown-menu
+								%li
+									%a.settings
+										Settings
+								%li
+									%a.balance
+										Balance
+
+					%form.navbar-search.pull-right
+						%input.search-query{ :type => 'text', :placeholder => 'Search'}
+
+		.container-fluid
+			.row-fluid
+				.span2
+					SPAN 2
+				.span10
+
+
 
 
 
@@ -15,5 +55,6 @@
 
 
 		%script{ :src => 'js/libs/jquery/jquery.js'}
+		%script{ :src => 'js/bootstrap/bootstrap.min.js'}
 		%script{ :src => 'js/libs/underscore/underscore.js'}
 		%script{ :src => 'js/libs/backbone/backbone.js'}
