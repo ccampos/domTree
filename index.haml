@@ -35,7 +35,7 @@
 										Settings
 								%li
 									%a.balance
-										Balance
+										Balance					
 
 					%form.navbar-search.pull-right
 						%input.search-query{ :type => 'text', :placeholder => 'Search'}
@@ -43,8 +43,27 @@
 		.container-fluid
 			.row-fluid
 				.span2
-					SPAN 2
+					%p
+						%a.btn{ :'data-toggle' => 'modal', :href => '.myModal', :role => 'button'}
+							Modal Demo
 				.span10
+					SPAN 10
+
+		.myModal.modal.hide.fade
+			.modal-header
+				%a.close{ :type => 'button', :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+					&times;
+				%h3
+					Modal header
+			.modal-body
+				%p
+					One fine body ...
+			.modal-footer
+				%a.btn{ :'data-dismiss' => 'modal', :'aria-hidden' => 'true'}
+					Close
+				%a.btn.btn-primary
+					Save changes
+
 
 
 
