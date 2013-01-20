@@ -9,7 +9,7 @@ define([
 
 	var runTree = function() {
 		// five levels deep using getChildren
-		var el = $('form#componentFormId div.cel-tabs');
+		var el = $('div.myModal');
 		var objTree = {};
 		Tree.getChildren(el, objTree);
 	}

@@ -2,7 +2,7 @@ $(document).ready(function() {
 	// Require.js allows us to configure shortcut aliases
 	// Their usage will become more apparent further along in the tutorial.
 	require.config({
-		urlArgs: "bust=" + (new Date()).getTime()
+		// urlArgs: "bust=" + (new Date()).getTime()
 	});
 
 	require([

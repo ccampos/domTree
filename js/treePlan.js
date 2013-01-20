@@ -145,3 +145,110 @@ var treeObject = {
   }
 };
 */
+
+var treeObject = {
+  el: {
+    class: 'class',
+    id: 'id',
+    children: [
+      {
+        el: {
+          class: 'class',
+          id: 'id'
+        }
+      },
+      {
+        el: {
+          class: 'class',
+          id: 'id',
+          children: [
+            {
+              el: {
+                class: 'class',
+                id: 'id'
+              }
+            },
+            {
+              el: {
+                class: 'class',
+                id: 'id'
+              }     
+            }
+          ]
+        }
+      }
+    ]
+  }
+};
+
+
+var treeArr = [
+  {
+    el: {
+      class: 'class',
+      id: 'id',
+      children: [
+        {
+          el: {
+            class: 'class',
+            id: 'id'
+          }
+        },
+        {
+          el: {
+            class: 'class',
+            id: 'id',
+            children: [
+              {
+                el: {
+                  class: 'class',
+                  id: 'id'
+                }
+              },
+              {
+                el: {
+                  class: 'class',
+                  id: 'id'
+                }     
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    el: {
+      class: 'class',
+      id: 'id',
+      children: [
+        {
+          el: {
+            class: 'class',
+            id: 'id'
+          }
+        },
+        {
+          el: {
+            class: 'class',
+            id: 'id',
+            children: [
+              {
+                el: {
+                  class: 'class',
+                  id: 'id'
+                }
+              },
+              {
+                el: {
+                  class: 'class',
+                  id: 'id'
+                }     
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+];
