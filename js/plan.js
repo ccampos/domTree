@@ -1,1 +1,1 @@
-// create a module for domTree.js
+// create a Require module for domTree.js

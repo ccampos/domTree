@@ -15,7 +15,7 @@ define([
 	}
 
 	return {
-		initialize: initialize
+		initialize: initialize,
 		runTree: runTree
 	};
 });
