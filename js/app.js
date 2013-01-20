@@ -1,21 +1,21 @@
 define([
 	'router', // Request router.js
-	'domTree'
-], function(Router, Tree) {
+	'domTree',
+	'svg'
+], function(Router, Tree, Svg) {
 	var initialize = function(){
 		// Pass in our Route module and call it's initialize function
 		Router.initialize();
-	}
 
-	var runTree = function() {
-		// five levels deep using getChildren
+		// create tree
 		var el = $('div.myModal');
-		var objTree = {};
-		Tree.getChildren(el, objTree);
-	}
+		Tree.createTree(el);
+
+		// run svg
+		Svg.initialize();
+	};
 
 	return {
-		initialize: initialize,
-		runTree: runTree
+		initialize: initialize
 	};
 });

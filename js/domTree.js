@@ -1,42 +1,86 @@
 define(function() {
   /**
-  * Method to get object with children elements until no more children elements found 
+  * Method to create DOM tree 
   *
-  * @method getChildren
+  * @method createTree
   * @param {Object} element jQuery Object
-  * @return {Boolean} Returns true on success
   */
-  var getChildren = function(element) {
-    // console.log('element:', $(element).prop('tagName'), ', class:', $(element).attr('class'), ', id:', $(element).attr('id'), ', dc:', $(element).children().length);
+  var createTree = function(element) {
     var el = element;
+    // declare structure array of objects
+    var branch = [];
+
+    // if el has children create new branch
 
     if (el.children() !== 0) {
-      $(el.children()).each(function(i) {
-          // declare treeArr
-          var treeArr = [];
+      $(el.children()).each(function(i, outChild) {
+        // assign branch obj attributes and add to branch
+        branch[i] = {};
+        branch[i] = createBranchEl($(outChild));
 
-          // declare future array object
-          var tagObj = $(this).prop('tagName').toString();
+        // do only if tabObj children is not empty - FUTURE TASK
+        // branch[i][tagObj]['children'] = [];
+        var outChildChildren = $(outChild).children();
+        if (outChildChildren !== 0) {
+          // declare branch i children
+          branch[i]['children'] = [];
+          $(outChildChildren).each(function(j, inChild) {
+            // assign branch
+            branch[i]['children'][j] = createBranchEl($(inChild));
+          });
+        };
 
-          // initialize treeArr obj
-          treeArr[i] = {};
 
-          // initialize treeArr obj obj
-          treeArr[i][tagObj] = {};
 
-          // assign treeArr obj attributes
-          treeArr[i][tagObj]['class'] = $(this).attr('class');
-          treeArr[i][tagObj]['id'] = $(this).attr('id');
-          treeArr[i][tagObj]['children'] = [];
+        /**
+        * Method to create branch
+        * and return object
+        *
+        * @method createBranch
+        * @param {Object} element jQuery Object
+        * @return {Object} branch
+        */
+        function createBranch(element) {
+          // declare local variable of jQuery Object
+          var el = element;
 
-        // treeArr['element'] = $(this).prop('tagName');
-        // obj['class'] = $(this).attr('class');
-        // obj['id'] = $(this).attr('id');
-        // obj['children'] = [];
-        // obj['children'][i] = getChildren($(this), obj['children']);
+          var branch = [];
 
-        // console.log($(this).prop('tagName') + '.' + $(this).attr('id'), ', this is child nbr:', i, ', class:', $(this).attr('class'), ', id:', $(this).attr('id') , ', dc:', $(this).children().length);
-        // getChildren($(this));
+          // declare branch i children
+          branch[i]['children'] = [];
+          $(outChildChildren).each(function(j, inChild) {
+            // assign branch
+            branch[i]['children'][j] = createBranchEl($(inChild));
+          });
+
+          return branch;
+        };
+
+
+
+
+        /**
+        * Method to create branch object
+        * and return object
+        *
+        * @method createBranchEl
+        * @param {Object} element jQuery Object
+        * @return {Object} branch
+        */
+        function createBranchEl(element) {
+          // declare local variable of jQuery Object
+          var el = element;
+
+          var branchEl = {};
+
+          branchEl['el'] = el.prop('tagName').toLowerCase();
+          branchEl['class'] = el.attr('class');
+          branchEl['id'] = el.attr('id');
+
+          return branchEl;
+        };
+
+
       });
     } else {
       console.log("");
@@ -45,7 +89,7 @@ define(function() {
   };
 
   return {
-    getChildren: getChildren
+    createTree: createTree
   }
 
 });
