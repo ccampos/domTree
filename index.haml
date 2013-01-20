@@ -2,22 +2,22 @@
 %html
 	%head
 		%title
-		%link{ :href => 'css/design.css', :rel => 'stylesheet' }
+		%link{ :href => 'css/design.css', :rel => 'stylesheet'}
 		%link{ :href => 'css/bootstrap/bootstrap.min.css', :rel => 'stylesheet'}
 		%link{ :href => 'css/bootstrap/bootstrap-responsive.min.css', :rel => 'stylesheet'}
 
-		%script{ :'data-main' => 'js/main', :src => 'js/libs/require/require.js' }
+		%script{ :'data-main' => 'js/main', :src => 'js/libs/require/require.js'}
 
 	%body
 		.navbar
 			.navbar-inner
 				.container
 					%a.brand{ :href => '#'}
-						dom tree
+						DOM tree
 					%ul.nav
 						%li.active
 							%a{ :href => '#'}
-								Home
+								Tree
 						%li
 							%a{ :href => '#'}
 								JavaScript
@@ -29,7 +29,7 @@
 							%a.dropdown-toggle{ :'data-toggle' => 'dropdown', :href => '#'}
 								Account
 								%b.caret
-							%ul.dropdown-menu
+							%ul.dropdown-menu{ :role => 'menu', :'aria-labelledby' => 'dLabel'}
 								%li
 									%a.settings
 										Settings
@@ -42,12 +42,49 @@
 
 		.container-fluid
 			.row-fluid
-				.span2
-					%p
+				.span2.bs-docs-sidebar
+					%ul.nav.nav-list.bs-docs-sidenav.affix.hidden-phone{ :'data-spy' => 'affix', :'data-offset-top' => '0'}
+						%li.active
+							%a{ :href => '#overview'}
+								Overview
+						%li
+							%a{ :href => '#tree'}
+								Tree
+						%li
+							%a{ :href => '#code'}
+								Code
+
+				.span10
+					%h2
+						Get Resource
+					%form.form-horizontal
+						.control-group
+							%label.control-label{ :for => 'url'}
+								URL
+							.controls
+								%input#url.input-xlarge{ :type => 'text', :placeholder => 'Paste URL ...'}
+								%span.help-block
+									to create DOM tree
+						.control-group
+							.controls
+								%button.btn{ :type => 'submit'}
+									Submit
+					%hr.bs-docs-separator
+					%h2#tree
+						Tree
+					%hr.bs-docs-separator
+					%h2#code
+						Code
+					%code
+						:escaped
+							<section>
+
+					%hr.bs-docs-separator
+					%h2#modalDemo
+						Modal Demo
+					.modalDemo
 						%a.btn{ :'data-toggle' => 'modal', :href => '.myModal', :role => 'button'}
 							Modal Demo
-				.span10
-					SPAN 10
 
 		.myModal.modal.hide.fade
 			.modal-header
