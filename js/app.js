@@ -1,5 +1,5 @@
 define([
-	'router' // Request router.js
+	'router', // Request router.js
 	'domTree'
 ], function(Router, Tree) {
 	var initialize = function(){
