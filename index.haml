@@ -55,7 +55,14 @@
 								Code
 
 				.span10
-					%svg
+					%h2#tree
+						SVG Circles
+					%span.help-block
+						transitions duration and direction are random
+					%button.btn.btn-info.run
+						Run
+
+					%svg.circles
 						%circle
 						%circle
 						%circle
@@ -63,6 +70,7 @@
 						%circle
 						%circle
 
+					%hr.bs-docs-separator
 					%h2
 						Get Resource
 					%form.form-horizontal
@@ -77,15 +85,24 @@
 							.controls
 								%button.btn{ :type => 'submit'}
 									Submit
+
 					%hr.bs-docs-separator
 					%h2#tree
 						Tree
+					%svg.branch
+
+					%hr.bs-docs-separator
+					%h2#tree
+						Bar Chart
+					%svg.barChart
+
 					%hr.bs-docs-separator
 					%h2#code
 						Code
 					%code
 						:escaped
 							<section>
+
 
 					%hr.bs-docs-separator
 					%h2#modalDemo
