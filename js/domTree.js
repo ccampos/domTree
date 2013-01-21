@@ -2,11 +2,11 @@ define(function() {
   /**
   * Method to create DOM tree 
   *
-  * @method createTree
+  * @method createBranch
   * @param {Object} element jQuery Object
   * @return {Array} branch
   */
-  var createTree = function(element) {
+  var createBranch = function(element) {
     var el = element;
     // declare structure array of objects
     var branch = [];
@@ -18,7 +18,10 @@ define(function() {
       });
     };
 
+    // log branch for inspection
     console.log('branch:', branch);
+
+    return branch;
   };
 
   /**
@@ -33,7 +36,7 @@ define(function() {
     // declare local variable of jQuery Object
     var el = element;
 
-    return el.children() !== 0;
+    return el.children().length !== 0;
   };
 
   /**
@@ -51,23 +54,26 @@ define(function() {
     // branch structure
     var branchEl = {};
 
+    // get element's attributes into branch
     branchEl['el'] = el.prop('tagName').toLowerCase();
     branchEl['class'] = el.attr('class');
     branchEl['id'] = el.attr('id');
 
+    // if element has children then create new array of elements
+    // and return branch element
     if (hasChildren(el)) {
       branchEl['children'] = [];
       $(el.children()).each(function(i, child) {
         branchEl['children'][i] = createBranchEl($(child));
       });
       return branchEl;
+    // if element has no children then just return branch element
     } else {
-      return;
-    }
+      return branchEl;
+    };
   };
 
   return {
-    createTree: createTree
-  }
-
+    createBranch: createBranch
+  };
 });
