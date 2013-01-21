@@ -8,7 +8,7 @@ define([
 		Router.initialize();
 
 		// create tree
-		var el = $('div.myModal');
+		var el = $('html');
 		Tree.createTree(el);
 
 		// run svg

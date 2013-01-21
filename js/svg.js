@@ -15,7 +15,21 @@ define(function() {
 				.duration(750)
 				.attr('cx', function() {
 			  return (Math.random() * 500 + 50);
-			});
+			})
+				.attr('cy', function() {
+					return (Math.random() * 180 + 20);
+				})
+			.transition()
+				.duration(750)
+				.style('fill', 'red')
+			.transition()
+				.duration(750)
+				.attr('cx', function() {
+			  return (Math.random() * 500 + 50);
+			})
+				.attr('cy', function() {
+					return (Math.random() * 180 + 20);
+				});
 	};
 
 	return {
