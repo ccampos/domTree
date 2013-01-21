@@ -8,11 +8,13 @@ define([
 		Router.initialize();
 
 		// create tree
-		var el = $('html');
-		Tree.createTree(el);
+		var el = $('div');
+		var data = Tree.createBranch(el);
 
-		// run svg
+		// run svg initialize
 		Svg.initialize();
+		// display SVG tree and pass branch data
+		Svg.displaySVGtree(data);
 	};
 
 	return {

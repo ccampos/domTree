@@ -1,38 +1,56 @@
 define(function() {
 	var initialize = function() {
-		// initialize svg with d3
+		// initialize and set svg and svg attributes
 		var svg = d3.select('svg');
+		var svgWidth = 600;
+		var svgHeight = 250;
+
+		svg.attr('height', svgHeight);
+		svg.attr('width', svgWidth);
+
+		// set svg width and height
 
 		// initialize circles
 		var circles = svg.selectAll('circle');
 
-		// set circles color to steelblue with transition
+		// set circles attributes and transitions
+		var radius = 12;
+		var margin = radius * 1.5;
+		var duration = 2000;
+
 		circles
-			.transition()
-				.duration(1000)
+			.attr('cx', function() {
+				return (Math.random() * (svgWidth - (margin * 2)) + margin);
+			})
+			.attr('cy', function() {
+				return (Math.random() * (svgHeight - (margin * 2)) + margin);
+			})
+			.transition().duration(Math.random() * duration)
 				.style('fill', 'steelblue')
-			.transition()
-				.duration(400)
+			.transition().duration(Math.random() * duration)
 				.attr('cx', function() {
-			  return (Math.random() * 500 + 50);
-			})
-				.attr('cy', function() {
-					return (Math.random() * 180 + 20);
+			  		return (Math.random() * (svgWidth - (margin * 2)) + margin);
 				})
-			.transition()
-				.duration(800)
-				.style('fill', 'red')
-			.transition()
-				.duration(800)
-				.attr('cx', function() {
-			  return (Math.random() * 500 + 50);
-			})
 				.attr('cy', function() {
-					return (Math.random() * 180 + 20);
+					return (Math.random() * (svgHeight - (margin * 2)) + margin);
+				})
+			.transition().duration(Math.random() * duration)
+				.style('fill', 'red')
+			.transition().duration(Math.random() * duration)
+				.attr('cx', function() {
+			  		return (Math.random() * (svgWidth - (margin * 2)) + margin);
+				})
+				.attr('cy', function() {
+					return (Math.random() * (svgHeight - (margin * 2)) + margin);
 				});
 	};
 
+	var displaySVGtree = function(data) {
+
+	};
+
 	return {
-		initialize: initialize
-	}
+		initialize: initialize,
+		displaySVGtree: displaySVGtree
+	};
 });
