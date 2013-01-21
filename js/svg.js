@@ -9,10 +9,10 @@ define(function() {
 		// set circles color to steelblue with transition
 		circles
 			.transition()
-				.duration(750)
+				.duration(1000)
 				.style('fill', 'steelblue')
 			.transition()
-				.duration(750)
+				.duration(400)
 				.attr('cx', function() {
 			  return (Math.random() * 500 + 50);
 			})
@@ -20,10 +20,10 @@ define(function() {
 					return (Math.random() * 180 + 20);
 				})
 			.transition()
-				.duration(750)
+				.duration(800)
 				.style('fill', 'red')
 			.transition()
-				.duration(750)
+				.duration(800)
 				.attr('cx', function() {
 			  return (Math.random() * 500 + 50);
 			})
