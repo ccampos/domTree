@@ -11,10 +11,12 @@ define([
 		var el = $('div');
 		var data = Tree.createBranch(el);
 
-		// run svg initialize
+		// run SVG initialize
 		Svg.initialize();
 		// display SVG tree and pass branch data
 		Svg.displaySVGtree(data);
+		// display SVG bar chart
+		Svg.displayBarChart();
 	};
 
 	return {
