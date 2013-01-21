@@ -14,11 +14,12 @@ define(function() {
 		var circles = svg.selectAll('circle');
 
 		// set circles attributes and transitions
-		var radius = 12;
+		var radius = 7;
 		var margin = radius * 1.5;
 		var duration = 2000;
 
 		circles
+			.attr('r', radius)
 			.attr('cx', function() {
 				return (Math.random() * (svgWidth - (margin * 2)) + margin);
 			})
