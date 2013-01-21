@@ -33,7 +33,7 @@ define(function() {
     // declare local variable of jQuery Object
     var el = element;
 
-    return el.children().length !== 0;
+    return el.children() !== 0;
   };
 
   /**
@@ -54,9 +54,6 @@ define(function() {
     branchEl['el'] = el.prop('tagName').toLowerCase();
     branchEl['class'] = el.attr('class');
     branchEl['id'] = el.attr('id');
-
-    // REMOVE THIS AFTER TESTING
-    console.log('hasChildren(el):', hasChildren(el));
 
     if (hasChildren(el)) {
       branchEl['children'] = [];
