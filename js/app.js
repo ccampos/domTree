@@ -13,18 +13,34 @@ define([
 
 		// run SVG initialize and bind to .run
 		$('svg.circles').hide();
+
+		// display SVG circles on click
+		var clickCounterCircles = 0;
 		$('button.runCircles').click(function() {
-			$('svg.circles').show();
-			Svg.initialize();
+			if (clickCounterCircles === 0) {
+				Svg.initialize();			
+				$('svg.circles').show();
+			} else {
+				Svg.initialize();
+			};
+			clickCounterCircles += 1;
 		});
 
 		// display SVG tree and pass branch data
-		Svg.displaySVGtree(data);
-		// display SVG bar chart
+		Svg.displaySVGtree(data);		
+
+		// display SVG bar chart on click
 		$('svg.barChart').hide();
+
+		var clickCounterBarChart = 0;
 		$('button.runBarChart').click(function() {
-			$('svg.barChart').show();
-			Svg.displayBarChart();
+			if (clickCounterBarChart === 0) {
+				Svg.displayBarChart();			
+				$('svg.barChart').show();
+			} else {
+				Svg.displayBarChart();
+			};
+			clickCounterBarChart += 1;
 		});
 	};
 
