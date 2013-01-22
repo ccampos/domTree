@@ -59,11 +59,11 @@ define(function() {
 
 		// create data array
 		var data = [
-			{ year: 2009, books: 54 },
-			{ year: 2010, books: 43 },
-			{ year: 2011, books: 35 },
-			{ year: 2012, books: 75 },
-			{ year: 2013, books: 51 }
+			{ year: 2009, books: makeRandomNbr(100) },
+			{ year: 2010, books: makeRandomNbr(100) },
+			{ year: 2011, books: makeRandomNbr(100) },
+			{ year: 2012, books: makeRandomNbr(100) },
+			{ year: 2013, books: makeRandomNbr(100) }
 		];
 
 		// set bar chart width
@@ -120,6 +120,10 @@ define(function() {
 			.text(function(datum) { return datum.year; })
 			.attr('transform', 'translate(0, 18)')
 			.attr('class', 'yAxis');
+	};
+
+	function makeRandomNbr(limit) {
+		return Math.round(Math.random() * limit);
 	};
 
 	return {
