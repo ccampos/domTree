@@ -66,11 +66,9 @@ define(function() {
       $(el.children()).each(function(i, child) {
         branchEl['children'][i] = createBranchEl($(child));
       });
-      return branchEl;
-    // if element has no children then just return branch element
-    } else {
-      return branchEl;
     };
+    
+    return branchEl;
   };
 
   return {
