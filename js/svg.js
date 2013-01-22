@@ -1,5 +1,5 @@
 define(function() {
-	var initialize = function() {
+	var displayCircles = function() {
 		// initialize and set svg and svg attributes
 		var svg = d3.select('svg.circles');
 		var svgHeight = 250;
@@ -127,7 +127,7 @@ define(function() {
 	};
 
 	return {
-		initialize: initialize,
+		displayCircles: displayCircles,
 		displaySVGtree: displaySVGtree,
 		displayBarChart: displayBarChart
 	};

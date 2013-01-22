@@ -18,10 +18,10 @@ define([
 		var clickCounterCircles = 0;
 		$('button.runCircles').click(function() {
 			if (clickCounterCircles === 0) {
-				Svg.initialize();			
+				Svg.displayCircles();			
 				$('svg.circles').show();
 			} else {
-				Svg.initialize();
+				Svg.displayCircles();
 			};
 			clickCounterCircles += 1;
 		});
