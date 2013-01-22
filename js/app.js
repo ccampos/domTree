@@ -8,7 +8,7 @@ define([
 		Router.initialize();
 
 		// create tree
-		var el = $('div');
+		var el = $('html');
 		var data = Tree.createBranch(el);
 
 		// run SVG initialize and bind to .run
